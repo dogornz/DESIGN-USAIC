@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+
+<html lang="vi"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "error-container": "#ffdad6",
+        "error": "#ba1a1a",
+        "inverse-on-surface": "#ebf1ff",
+        "tertiary-container": "#964f00",
+        "surface-container": "#e7eefe",
+        "on-primary-container": "#d4dcff",
+        "on-primary": "#ffffff",
+        "on-error-container": "#93000a",
+        "on-primary-fixed": "#00174d",
+        "on-tertiary-fixed": "#2f1500",
+        "secondary-fixed-dim": "#63dca6",
+        "tertiary-fixed": "#ffdcc4",
+        "primary-container": "#1a56db",
+        "surface-dim": "#d3daea",
+        "on-secondary-container": "#00714c",
+        "outline-variant": "#c3c5d7",
+        "inverse-primary": "#b5c4ff",
+        "on-secondary": "#ffffff",
+        "surface-bright": "#f9f9ff",
+        "on-secondary-fixed-variant": "#005236",
+        "primary": "#003fb1",
+        "surface-tint": "#1353d8",
+        "inverse-surface": "#2a313d",
+        "surface-variant": "#dce2f3",
+        "on-tertiary": "#ffffff",
+        "primary-fixed-dim": "#b5c4ff",
+        "surface-container-highest": "#dce2f3",
+        "on-secondary-fixed": "#002113",
+        "on-tertiary-container": "#ffd6b8",
+        "surface-container-low": "#f0f3ff",
+        "primary-fixed": "#dbe1ff",
+        "tertiary": "#733b00",
+        "secondary-container": "#7ef6be",
+        "outline": "#737686",
+        "on-tertiary-fixed-variant": "#6f3900",
+        "on-surface": "#151c27",
+        "tertiary-fixed-dim": "#ffb77f",
+        "on-background": "#151c27",
+        "secondary-fixed": "#81f9c1",
+        "surface-container-lowest": "#ffffff",
+        "on-error": "#ffffff",
+        "on-surface-variant": "#434654",
+        "on-primary-fixed-variant": "#003dab",
+        "surface-container-high": "#e2e8f8",
+        "background": "#f9f9ff",
+        "secondary": "#006c49",
+        "surface": "#f9f9ff"
+      },
+      "borderRadius": {
+        "DEFAULT": "0.25rem",
+        "lg": "0.5rem",
+        "xl": "0.75rem",
+        "full": "9999px"
+      },
+      "spacing": {
+        "space-sm": "0.5rem",
+        "space-xs": "0.25rem",
+        "space-lg": "1.5rem",
+        "gutter": "1rem",
+        "margin": "1rem",
+        "gutter-desktop": "1.5rem",
+        "space-md": "1rem",
+        "margin-desktop": "2rem",
+        "space-xl": "2rem"
+      },
+      "fontFamily": {
+        "headline-md": ["Inter"],
+        "body-lg": ["Inter"],
+        "label-md": ["Inter"],
+        "title-md": ["Inter"],
+        "code-md": ["JetBrains Mono"],
+        "body-sm": ["Inter"],
+        "display-lg-mobile": ["Inter"],
+        "headline-sm": ["Inter"],
+        "display-lg": ["Inter"],
+        "headline-lg": ["Inter"],
+        "body-md": ["Inter"],
+        "code-sm": ["JetBrains Mono"],
+        "label-sm": ["Inter"]
+      },
+      "fontSize": {
+        "headline-md": ["22px", {"lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+        "body-lg": ["16px", {"lineHeight": "26px", "fontWeight": "400"}],
+        "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+        "title-md": ["16px", {"lineHeight": "24px", "fontWeight": "600"}],
+        "code-md": ["13px", {"lineHeight": "20px", "fontWeight": "400"}],
+        "body-sm": ["12px", {"lineHeight": "18px", "fontWeight": "400"}],
+        "display-lg-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+        "headline-sm": ["18px", {"lineHeight": "26px", "fontWeight": "600"}],
+        "display-lg": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+        "headline-lg": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+        "body-md": ["14px", {"lineHeight": "22px", "fontWeight": "400"}],
+        "code-sm": ["11px", {"lineHeight": "16px", "fontWeight": "400"}],
+        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}]
+      }
+    }
+  }
+}</script></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 h-16 z-50 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-margin-desktop flex items-center justify-between gap-space-lg"><div class="flex items-center gap-space-md min-w-[220px]"><img alt="USAIC - UNETI Search And Intelligent Companion modern academic AI search logo mark and typography. Brand logo. - Primary color: #1a56db
+- Font: inter
+- Mode: light
+- Roundness: rounded-md
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XmzxKviDFNC-I1h1WiIQ8nCt8ZGhlry7ugrIndOse9eOMHW1aw9SrMPdjy3ZgRWXtXo3785l0iLHjWWfhGLMUKbieH5NvUnb0R7YMYml_6ERsqkagSsSDys3hZmcEG-AkNb8MAnsyyK4DBgejcy2MNO377T8IdfS6vbctlWJoR5ZVMx5EwgjsryCcV0a8xJ8O-I12QiVnosCu-uyZAAjTsaiB3VQyFOMkZKzjnWvJEXNILvQcm7oWBCmkb"/><div class="flex flex-col"><span class="font-title-md text-title-md text-primary leading-tight tracking-tight">USAIC UNETI</span><span class="font-code-sm text-code-sm text-outline tracking-wider uppercase">Academic Companion</span></div></div><div class="flex-1 max-w-2xl mx-auto"><div class="relative flex items-center w-full"><span class="material-symbols-outlined absolute left-space-md text-outline pointer-events-none text-[20px]">search</span><input class="w-full h-10 pl-11 pr-20 bg-surface-container-low rounded-lg text-on-surface placeholder:text-outline font-body-sm text-body-sm outline-none focus:bg-surface-container-lowest focus:shadow-[0_2px_10px_rgba(26,86,219,0.08)] transition-all" placeholder="Tìm kiếm câu hỏi, môn học (IT101, ACC202), tài liệu giáo trình..." type="text"/><div class="absolute right-space-sm flex items-center gap-1"><kbd class="px-1.5 py-0.5 bg-surface-container-highest rounded text-on-surface-variant font-code-sm text-code-sm border-0">⌘K</kbd></div></div></div><div class="flex items-center gap-space-md min-w-[200px] justify-end"><button class="relative p-space-sm rounded-full text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1 right-1 w-4 h-4 bg-error text-on-error rounded-full font-label-sm text-[10px] flex items-center justify-center font-bold">3</span></button><button class="p-space-sm rounded-full text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">help</span></button><div class="flex items-center gap-space-sm pl-space-sm ml-space-xs"><div class="flex flex-col text-right hidden lg:flex"><span class="font-label-md text-label-md text-on-surface leading-tight font-semibold">Nguyễn Văn Khoa</span><span class="font-label-sm text-label-sm text-outline">CNTT - K16</span></div><div class="relative cursor-pointer"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1WJlP-0TIhjvIB31Sr1cfyDafSxWPZoAFm8JZ8GuwbGZDIFHh2V-d82cefCPrsqaQrImyH-oX_S4y-ocTtz-4zS50r2wZAQIN7Tp_E8zHO6NPjmQh_YTKnXqVuPsmSdujOnj1wpEyHcZXND5tyOwr9k_WgJg7Ff_UwfUTmPw1GH4lcYUsGREcn1DWdUHR-wLTEwgEaY06MK0bfkWevInacY45jjLT3qEgFPvd9SCDoXtvaBIAnjmhHGzRo"/><span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-secondary rounded-full ring-2 ring-surface-container-lowest"></span></div></div></div></div></header><aside class="fixed left-0 top-16 bottom-0 w-60 z-40 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.03)] flex flex-col justify-between overflow-y-auto"><div class="py-space-md px-space-sm flex flex-col gap-space-xs"><div class="px-space-md py-space-xs"><span class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">Khám phá học thuật</span></div><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary font-semibold shadow-sm"><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-label-md text-label-md" data-path="trang-chu" href="#"><span class="material-symbols-outlined text-[20px]">home</span><span>Trang chủ</span></a><a aria-current="page" class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg transition-colors bg-primary-container text-on-primary font-semibold shadow-sm" data-path="dien-dan-hoi-dap" href="#"><span class="material-symbols-outlined text-[20px]">forum</span><span>Diễn đàn Q&amp;A</span></a><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-label-md text-label-md" data-path="kho-tai-lieu" href="#"><span class="material-symbols-outlined text-[20px]">menu_book</span><span>Kho tài liệu</span></a><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-label-md text-label-md" data-path="chu-de-tags" href="#"><span class="material-symbols-outlined text-[20px]">label</span><span>Tags</span></a></nav><div class="px-space-md pt-space-md pb-space-xs mt-space-xs"><span class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">Không gian cá nhân</span></div><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary font-semibold shadow-sm"><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-label-md text-label-md" data-path="ho-so-hoc-tap" href="#"><span class="material-symbols-outlined text-[20px]">account_circle</span><span>Hồ sơ của tôi</span></a><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-label-md text-label-md" data-path="cau-hoi-cua-toi" href="#"><span class="material-symbols-outlined text-[20px]">help_outline</span><span>Câu hỏi của tôi</span></a><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-label-md text-label-md" data-path="tai-lieu-cua-toi" href="#"><span class="material-symbols-outlined text-[20px]">bookmark_border</span><span>Tài liệu của tôi</span></a></nav><div class="px-space-md pt-space-md pb-space-xs mt-space-xs"><span class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">Ban điều hành</span></div><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary font-semibold shadow-sm"><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-label-md text-label-md" data-path="kiem-duyet-noi-dung" href="#"><span class="material-symbols-outlined text-[20px]">verified_user</span><span>Kiểm duyệt</span><span class="ml-auto bg-tertiary-fixed text-tertiary px-1.5 py-0.5 rounded font-label-sm text-[10px] font-semibold">MOD</span></a><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-label-md text-label-md" data-path="quan-tri-he-thong" href="#"><span class="material-symbols-outlined text-[20px]">admin_panel_settings</span><span>Quản trị</span><span class="ml-auto bg-primary-fixed text-primary px-1.5 py-0.5 rounded font-label-sm text-[10px] font-semibold">ADMIN</span></a></nav></div><div class="p-space-md m-space-sm rounded-xl bg-surface-container-low flex flex-col gap-space-xs"><div class="flex items-center gap-space-sm text-primary font-title-md text-title-md"><span class="material-symbols-outlined text-[20px]">auto_awesome</span><span>UNETI AI Bot</span></div><p class="font-body-sm text-body-sm text-on-surface-variant">Trợ lý giải bài tập và tra cứu đề thi mẫu theo chuẩn khoa CNTT &amp; Kinh tế.</p><button class="mt-space-xs w-full py-1.5 px-space-sm bg-primary-container hover:bg-primary text-on-primary rounded-lg font-label-sm text-label-sm transition-colors text-center font-medium" type="button">Đặt câu hỏi AI</button></div></aside><div class="pl-60"><main class="w-full pt-16 min-h-[calc(100vh-80px)] bg-background px-margin-desktop py-space-lg"><div class="flex flex-col w-full">
+<!-- Toast Notification System -->
+<div class="fixed bottom-6 right-6 z-50 transform translate-y-16 opacity-0 pointer-events-none transition-all duration-300 flex items-center gap-space-sm px-space-md py-space-sm rounded-lg bg-inverse-surface text-inverse-on-surface shadow-xl" id="toastNotification">
+<span class="material-symbols-outlined text-secondary-fixed text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label-md text-label-md" id="toastMsg">Đã sao chép liên kết vào bộ nhớ tạm!</span>
+</div>
+<div class="w-full max-w-[1280px] mx-auto flex flex-col lg:flex-row items-start gap-gutter-desktop">
+<!-- LEFT MAIN COLUMN (68% width on desktop) -->
+<section class="w-full lg:w-[68%] flex flex-col gap-space-lg min-w-0">
+<!-- Academic Breadcrumbs -->
+<nav class="flex items-center flex-wrap gap-space-xs font-body-sm text-body-sm text-outline">
+<a class="hover:text-primary transition-colors flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[16px]">home</span>Trang chủ
+        </a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Diễn đàn Q&amp;A</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Khoa CNTT</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-on-surface font-label-md text-label-md truncate max-w-[200px]">Lập trình Java</span>
+</nav>
+<!-- Question Core Header Card -->
+<article class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<!-- Question Title -->
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight leading-snug">
+          Giải thích chi tiết cơ chế Dependency Injection và Inversion of Control (IoC) trong Spring Boot 3
+        </h1>
+<!-- Metadata Bar -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm pb-space-sm">
+<div class="flex items-center flex-wrap gap-space-sm">
+<img class="w-9 h-9 rounded-full object-cover" data-alt="Portrait photo of a young Vietnamese male university engineering student Nguyen Van Nam wearing smart casual eyeglasses in modern university library Hanoi setting softly lit in blue and neutral tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkwz7bIGN1BWyNLFfpAjLv_aFc5ZcsaWbjIa_560ARH-FjoHcYY_dF7Tp9cReeRPEJYwjk9rN03JZnKMVMyseIfWRZGZY1d_szKeFZ5xzK8nYlU0zDxAIYhtxshM_k0xjOcJHsiuwFPmh1FrVlbWNrb8AW6rFRwhMCWm0Rn1J3qyfELsp7HccMQgMpr_o48Ywa0nsBJHz1NikWUbz-E1yE4w7jnygPI5QRTxn4vxDLY_aptjJTfTBCSg"/>
+<div class="flex flex-wrap items-center gap-space-xs font-label-sm text-label-sm">
+<span class="font-title-md text-title-md text-on-surface">Nguyễn Văn Nam</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-primary font-label-sm text-label-sm font-semibold">UNETI_USER</span>
+<span class="flex items-center gap-0.5 px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-code-sm text-code-sm">
+<span class="material-symbols-outlined text-[15px] text-tertiary" style="font-variation-settings: 'FILL' 1;">star</span>
+                150 điểm uy tín
+              </span>
+</div>
+</div>
+<div class="flex items-center gap-space-md font-body-sm text-body-sm text-outline">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 10/09/2026, 14:30
+            </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">visibility</span> 428 lần xem
+            </span>
+</div>
+</div>
+<!-- Academic Tags -->
+<div class="flex flex-wrap gap-space-xs">
+<span class="px-2.5 py-1 rounded-md bg-surface-container text-primary font-code-sm text-code-sm font-medium">Java</span>
+<span class="px-2.5 py-1 rounded-md bg-surface-container text-primary font-code-sm text-code-sm font-medium">Spring Boot</span>
+<span class="px-2.5 py-1 rounded-md bg-surface-container text-primary font-code-sm text-code-sm font-medium">Backend</span>
+<span class="px-2.5 py-1 rounded-md bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">CNTT-K16</span>
+</div>
+<!-- Question Body Content -->
+<div class="flex flex-col gap-space-md mt-space-sm font-body-lg text-body-lg text-on-surface leading-relaxed">
+<p>
+            Em đang làm bài tập lớn môn <strong class="font-semibold text-primary">Lập trình Web nâng cao</strong> bằng Spring Boot. Khi khai báo các Service và Repository, em thấy có 3 cách tiêm phụ thuộc phổ biến: <code class="font-code-md text-code-md px-1.5 py-0.5 rounded bg-surface-container-high text-primary">Field Injection</code> (gắn <code class="font-code-md text-code-md px-1.5 py-0.5 rounded bg-surface-container-high text-primary">@Autowired</code> trực tiếp trên biến), <code class="font-code-md text-code-md px-1.5 py-0.5 rounded bg-surface-container-high text-primary">Setter Injection</code>, và <code class="font-code-md text-code-md px-1.5 py-0.5 rounded bg-surface-container-high text-primary">Constructor Injection</code>.
+          </p>
+<p>
+            Thầy giáo bộ môn khuyến nghị cả lớp nên dùng <em>Constructor Injection</em> và gắn từ khóa <code class="font-code-md text-code-md px-1.5 py-0.5 rounded bg-surface-container-high text-primary">final</code>, nhưng em chưa thực sự hiểu bản chất tại sao lại vượt trội hơn hẳn so với việc chỉ đặt annotation ngắn gọn như sau:
+          </p>
+<!-- Standard Java Code Block -->
+<div class="rounded-lg overflow-hidden bg-inverse-surface text-inverse-on-surface shadow-md">
+<div class="flex items-center justify-between px-space-md py-space-xs bg-surface-variant/20">
+<div class="flex items-center gap-space-xs">
+<span class="w-3 h-3 rounded-full bg-error inline-block"></span>
+<span class="w-3 h-3 rounded-full bg-tertiary-fixed-dim inline-block"></span>
+<span class="w-3 h-3 rounded-full bg-secondary-fixed-dim inline-block"></span>
+<span class="ml-2 font-code-sm text-code-sm text-outline-variant">StudentService.java</span>
+</div>
+<button class="flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-highest/20 hover:bg-surface-container-highest/40 text-inverse-on-surface font-label-sm text-label-sm transition-colors" onclick="copyCode(this, 'codeBlockSnippet1')" type="button">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+<span>Sao chép code</span>
+</button>
+</div>
+<pre class="p-space-md overflow-x-auto font-code-md text-code-md leading-relaxed text-inverse-on-surface"><code id="codeBlockSnippet1"><span class="text-secondary-fixed">@Service</span>
+<span class="text-primary-fixed-dim">public class</span> <span class="text-tertiary-fixed">StudentService</span> {
+    
+    <span class="text-outline-variant">// Bắt buộc immutability</span>
+    <span class="text-primary-fixed-dim">private final</span> StudentRepository studentRepository;
+
+    <span class="text-outline-variant">// Constructor Injection tự động (Spring Framework 4.3+)</span>
+    <span class="text-primary-fixed-dim">public</span> <span class="text-tertiary-fixed">StudentService</span>(StudentRepository studentRepository) {
+        <span class="text-primary-fixed-dim">this</span>.studentRepository = studentRepository;
+    }
+    
+    <span class="text-primary-fixed-dim">public</span> List&lt;Student&gt; <span class="text-secondary-fixed">getAllEnrolled</span>() {
+        <span class="text-primary-fixed-dim">return</span> studentRepository.findAllActive();
+    }
+}</code></pre>
+</div>
+<!-- Academic Visual / Diagram Callout -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col md:flex-row items-center gap-space-md">
+<div class="w-full md:w-48 h-32 rounded-lg bg-cover bg-center shrink-0" data-alt="Technical clean architectural schematic diagram of Spring Inversion of Control container injecting dependencies into Java Spring beans, blueprint aesthetic in cobalt and cyan tones." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDT9flZkOf5im5EnpAB-CMsCPo-Pmr7_mVISi-eyA_AEmfCDvqJ3bjvbn8FFJVmNcuYeznyQDP-A0tk0U_bAjTj_rHLyavN-q60VE40o7q9TVyR1MuK3P-Yi76aQmVeKosDezflXkcWjKOzuWlIIwCwamEFg7XEGxbJOeRd5xRJBhaKN8fClWq1JeDljAggs3O6rkag0uzyS4mcajqwbwcAQOl4F_Iy_cZyWalK2C_QtMmcqNS827AWZw')"></div>
+<div class="flex flex-col gap-space-xs">
+<span class="font-title-md text-title-md text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[20px]">info</span>
+                Lưu ý học thuật: UNETI Syllabus K16
+              </span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Theo chuẩn đồ án tốt nghiệp khoa Công nghệ thông tin UNETI, việc tuân thủ nguyên lý SOLID (đặc biệt là Dependency Inversion Principle - DIP) là tiêu chí chấm điểm kiến trúc phần mềm bắt buộc trong học phần Công nghệ phần mềm &amp; Lập trình Web nâng cao.
+              </p>
+</div>
+</div>
+</div>
+<!-- Question Interactive Action Toolbar -->
+<div class="pt-space-md mt-space-xs flex flex-wrap items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<!-- Horizontal Vote Module -->
+<div class="flex items-center rounded-lg bg-surface-container-low p-1 gap-1">
+<button class="p-1.5 rounded text-on-surface-variant hover:text-secondary hover:bg-surface-container transition-colors flex items-center justify-center" onclick="handleVote(this, 'up')" title="Bỏ phiếu hữu ích" type="button">
+<span class="material-symbols-outlined text-[20px]">arrow_upward</span>
+</button>
+<span class="vote-count font-title-md text-title-md text-primary px-2 font-bold select-none">18</span>
+<button class="p-1.5 rounded text-on-surface-variant hover:text-error hover:bg-surface-container transition-colors flex items-center justify-center" onclick="handleVote(this, 'down')" title="Bỏ phiếu không hữu ích" type="button">
+<span class="material-symbols-outlined text-[20px]">arrow_downward</span>
+</button>
+</div>
+<!-- Share Button -->
+<button class="flex items-center gap-1 px-3 py-2 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container transition-colors font-label-md text-label-md" onclick="showToast('Đã sao chép link câu hỏi vào clipboard!')" type="button">
+<span class="material-symbols-outlined text-[18px]">share</span>
+<span>Chia sẻ</span>
+</button>
+<!-- Bookmark Button -->
+<button class="flex items-center gap-1 px-3 py-2 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container transition-colors font-label-md text-label-md" onclick="toggleBookmark(this)" type="button">
+<span class="material-symbols-outlined text-[18px]">bookmark_border</span>
+<span>Lưu bài</span>
+</button>
+</div>
+<!-- Question Options Menu -->
+<div class="relative">
+<button class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors" onclick="toggleOptionsMenu(this)" type="button">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+<div class="menu-dropdown hidden absolute right-0 bottom-full mb-1 w-44 rounded-lg bg-surface-container-lowest shadow-xl py-1 z-20">
+<button class="w-full text-left px-space-md py-2 text-on-surface font-label-md text-label-md hover:bg-surface-container flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span> Sửa câu hỏi
+              </button>
+<button class="w-full text-left px-space-md py-2 text-error font-label-md text-label-md hover:bg-surface-container flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]">flag</span> Báo cáo bài
+              </button>
+<button class="w-full text-left px-space-md py-2 text-outline font-label-md text-label-md hover:bg-surface-container flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility_off</span> Ẩn câu hỏi
+              </button>
+</div>
+</div>
+</div>
+</article>
+<!-- ANSWERS SECTION -->
+<div class="flex flex-col gap-space-md pt-space-xs">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-sm">
+<h2 class="font-headline-md text-headline-md text-on-surface">3 Câu trả lời</h2>
+<span class="w-2 h-2 rounded-full bg-secondary inline-block"></span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-outline">Sắp xếp:</span>
+<select class="px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md outline-none cursor-pointer">
+<option value="votes">Bình chọn cao nhất (Phổ biến)</option>
+<option value="newest">Mới nhất</option>
+<option value="faculty">Giảng viên ưu tiên</option>
+</select>
+</div>
+</div>
+<!-- ANSWER 1: BEST ANSWER (is_best_answer=true) -->
+<div class="relative bg-[#FFFBEB] rounded-xl shadow-sm p-space-lg flex flex-col gap-space-md" style="box-shadow: inset 4px 0 0 0 #F59E0B;">
+<!-- Best Answer Badge Header -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm bg-tertiary-fixed/30 p-space-sm rounded-lg">
+<div class="flex items-center gap-space-xs text-tertiary font-title-md text-title-md font-semibold">
+<span class="material-symbols-outlined text-[20px] text-tertiary" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span>Câu trả lời hay nhất - Được xác thực bởi Giảng viên Khoa CNTT</span>
+</div>
+<span class="font-code-sm text-code-sm text-on-tertiary-fixed-variant bg-tertiary-fixed px-2 py-0.5 rounded">UNETI CERTIFIED</span>
+</div>
+<div class="flex items-start gap-space-md">
+<!-- Vertical Voting Panel -->
+<div class="flex flex-col items-center rounded-lg bg-surface-container-lowest/80 p-1 shrink-0">
+<button class="p-1.5 rounded text-on-surface-variant hover:text-secondary hover:bg-surface-container transition-colors" onclick="handleVote(this, 'up')" type="button">
+<span class="material-symbols-outlined text-[22px]">arrow_upward</span>
+</button>
+<span class="vote-count font-title-md text-title-md text-on-surface font-bold select-none my-1">32</span>
+<button class="p-1.5 rounded text-on-surface-variant hover:text-error hover:bg-surface-container transition-colors" onclick="handleVote(this, 'down')" type="button">
+<span class="material-symbols-outlined text-[22px]">arrow_downward</span>
+</button>
+</div>
+<!-- Answer Core Content -->
+<div class="flex flex-col gap-space-md min-w-0 flex-1">
+<!-- Author Profile -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="Official academic portrait photo of Dr. Vu Minh Tuan, male Vietnamese computer science university professor with warm intellectual presence, wearing suit and glasses in university campus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrxyE_F5MjJMTRb2qap5NJacvcv9qMy5PTnW_dc38uqoeU_ylQMgvw6Au9wh1ZrAxe921mEi0H9fcJQuhyqvE9PrFkTevl8467BGwswRkVUnSDhGBTgfr8PPUpGTUxiJduEE_HJxgObPpJQWW-oQHor8ko38XlVXKCkL-OuUofqcuDicZmpdBbcertkKgGM1I7JOIpwpTa8RbAVaWLQaXkPN68SeO9e9To_c75wThCq9iI4P5swPAlkw"/>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-title-md text-title-md text-on-surface font-bold">TS. Vũ Minh Tuấn</span>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-container text-on-tertiary font-label-sm text-label-sm font-semibold">GIẢNG VIÊN</span>
+</div>
+<span class="font-code-sm text-code-sm text-outline">Khoa CNTT · 2,450 điểm cống hiến</span>
+</div>
+</div>
+<span class="font-body-sm text-body-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">history</span> 2 giờ trước
+                </span>
+</div>
+<!-- Content Analysis -->
+<div class="font-body-lg text-body-lg text-on-surface flex flex-col gap-space-sm leading-relaxed">
+<p>
+                  Chào em Nam, đây là câu hỏi cốt lõi và rất hay xuất hiện trong phỏng vấn tuyển dụng Java/Spring developer cũng như bảo vệ đồ án.
+                </p>
+<p>
+                  Thầy giải thích ngắn gọn bản chất <strong>IoC (Inversion of Control)</strong> là nguyên lý đảo ngược quyền kiểm soát: thay vì class tự khởi tạo đối tượng phụ thuộc bằng từ khóa <code class="font-code-md text-code-md px-1 bg-surface-container rounded">new</code>, quyền này được bàn giao hoàn toàn cho <strong>Spring IoC Container</strong>. <strong>Dependency Injection (DI)</strong> chính là phương thức hiện thực hóa nguyên lý này.
+                </p>
+<p>
+<strong>Lý do tại sao Constructor Injection luôn được khuyên dùng tuyệt đối:</strong>
+</p>
+<ul class="list-disc pl-5 flex flex-col gap-1.5 text-on-surface-variant font-body-md text-body-md">
+<li><strong class="text-on-surface">Immutability (Bất biến):</strong> Cho phép khai báo biến với từ khóa <code class="font-code-md text-code-md text-primary font-semibold">final</code>, đảm bảo dependency không bị gán lại sau khi khởi tạo.</li>
+<li><strong class="text-on-surface">Dễ Unit Test:</strong> Khi viết Mockito test, em có thể khởi tạo class và truyền mock repository qua constructor bình thường mà không cần khởi động Spring Context hay dùng Reflection hack.</li>
+<li><strong class="text-on-surface">Phát hiện sớm Circular Dependency (Phụ thuộc vòng):</strong> Spring sẽ ném exception <code class="font-code-md text-code-md text-error font-semibold">BeanCurrentlyInCreationException</code> ngay lúc ứng dụng startup thay vì lỗi âm thầm khi runtime.</li>
+</ul>
+<!-- Visual Schema Lifecycle Comparison -->
+<div class="rounded-xl overflow-hidden bg-surface-container-lowest p-space-md my-space-xs shadow-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-title-md text-primary font-semibold">Sơ đồ vòng đời Spring Bean với Constructor Injection</span>
+<span class="font-code-sm text-code-sm text-outline">ApplicationContext</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-2 py-2 text-center">
+<div class="p-3 rounded-lg bg-surface-container flex flex-col items-center justify-center">
+<span class="font-code-sm text-code-sm text-outline uppercase font-semibold">Giai đoạn 1</span>
+<span class="font-title-md text-title-md text-primary font-semibold">Quét Bean</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Class Scanner tìm Service</span>
+</div>
+<div class="p-3 rounded-lg bg-surface-container-high flex flex-col items-center justify-center">
+<span class="font-code-sm text-code-sm text-outline uppercase font-semibold">Giai đoạn 2</span>
+<span class="font-title-md text-title-md text-secondary font-semibold">Tiêm Constructor</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Resolve Dependencies</span>
+</div>
+<div class="p-3 rounded-lg bg-secondary-container/40 flex flex-col items-center justify-center">
+<span class="font-code-sm text-code-sm text-outline uppercase font-semibold">Giai đoạn 3</span>
+<span class="font-title-md text-title-md text-on-secondary-container font-semibold">Ready State</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Bean sẵn sàng nhận request</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Action triggers -->
+<div class="flex flex-wrap items-center gap-space-sm pt-space-xs">
+<span class="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-tertiary-fixed text-tertiary font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[18px]">done_all</span> Đã chọn là câu trả lời hay nhất
+                </span>
+<button class="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-colors font-label-md text-label-md" type="button">
+<span class="material-symbols-outlined text-[18px]">reply</span> Phản hồi
+                </button>
+<button class="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-colors font-label-md text-label-md" onclick="showToast('Đã sao chép link câu trả lời!')" type="button">
+<span class="material-symbols-outlined text-[18px]">share</span> Chia sẻ
+                </button>
+<button class="ml-auto flex items-center gap-1 px-3 py-1.5 rounded-lg bg-secondary-container/50 text-on-secondary-container font-label-md text-label-md" type="button">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">thumb_up</span>
+<span>Hữu ích (32)</span>
+</button>
+</div>
+<!-- Sub-replies Nested Stream (Indented 40px) -->
+<div class="flex flex-col gap-space-sm ml-6 md:ml-10 pt-space-sm">
+<!-- Sub reply 1 (Student follow up) -->
+<div class="p-space-md rounded-lg bg-surface-container-lowest shadow-sm flex items-start gap-space-sm">
+<img class="w-7 h-7 rounded-full object-cover shrink-0 mt-0.5" data-alt="Vietnamese student avatar thumbnail portrait in tech workshop setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRGHIpVbHD6XlqdkLbeSrxpmJcOe8xhCE1YgjSihO_Rf4vUj0qnTTRlhTSPP-HbkH8ga1YlJWOHCOhN8mH5scu-3jZxQoZJR58XEGg1OiVnB8liLUnimQDyqQB_glvOIRC0eU0gg0HjEyPnNWhCnglk3xCBtPG2uUyFy0d4oV5XcLX2Hm5d1ZFPEeTbo3Faem_i5kkahe4M9Ugpbi6ef5Kza0KLTZ_zu35tPSn_ts2rGFpacFBO6bV3A"/>
+<div class="flex flex-col gap-1 flex-1">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Nguyễn Văn Nam</span>
+<span class="font-code-sm text-code-sm text-outline">Tác giả</span>
+</div>
+<span class="font-code-sm text-code-sm text-outline">1 giờ trước</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                      Dạ em cảm ơn thầy Tuấn ạ! Thầy cho em hỏi thêm: nếu lỡ xảy ra Circular Dependency giữa 2 Service A và B thì cách xử lý chuẩn nhất trong công nghiệp là tách Service trung gian hay dùng <code class="font-code-sm text-code-sm px-1 bg-surface-container rounded">@Lazy</code> ạ?
+                    </p>
+</div>
+</div>
+<!-- Sub reply 2 (Teacher response) -->
+<div class="p-space-md rounded-lg bg-surface-container-low shadow-sm flex items-start gap-space-sm">
+<img class="w-7 h-7 rounded-full object-cover shrink-0 mt-0.5" data-alt="Official academic portrait thumbnail photo of professor Dr Vu Minh Tuan." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmk2w7vQ8di31_C4ceN8sbwO_Jb-AoQK9_aVMOGOJrD3P6X1a_fNZHwy5FVyKyKdvcxEsKffviw5CzGklRT4mFIBFxTEmd9iw0FjHsqLB2TPthYQCH7dH8NA7eyGyXIzfcTEzjlUJcI_51LDEzUj0IQGCxhxvgrCbU5DAtjNGySHek4AoDUfvCGuJivHXJ0esJoN0pZzR2Ir8TpnXEUseSw3bdh6fOmUprPUs24tIchwVm_MmvKa32Og"/>
+<div class="flex flex-col gap-1 flex-1">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-bold text-primary">TS. Vũ Minh Tuấn</span>
+<span class="px-1.5 py-0.2 bg-tertiary-fixed text-tertiary rounded text-[10px] font-bold">GIẢNG VIÊN</span>
+</div>
+<span class="font-code-sm text-code-sm text-outline">45 phút trước</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                      Chuẩn nhất luôn là tái cấu trúc thiết kế (refactor), tách phần dùng chung sang Service thứ 3 (Mediation Service) hoặc dùng Domain Events. Dùng <code class="font-code-sm text-code-sm px-1 bg-surface-container rounded">@Lazy</code> chỉ là giải pháp tình thế (anti-pattern) tạm thời thôi em nhé!
+                    </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ANSWER 2: REGULAR ANSWER -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg flex flex-col gap-space-md">
+<div class="flex items-start gap-space-md">
+<!-- Vertical Voting Panel -->
+<div class="flex flex-col items-center rounded-lg bg-surface-container-low p-1 shrink-0">
+<button class="p-1.5 rounded text-on-surface-variant hover:text-secondary hover:bg-surface-container transition-colors" onclick="handleVote(this, 'up')" type="button">
+<span class="material-symbols-outlined text-[22px]">arrow_upward</span>
+</button>
+<span class="vote-count font-title-md text-title-md text-on-surface font-bold select-none my-1">8</span>
+<button class="p-1.5 rounded text-on-surface-variant hover:text-error hover:bg-surface-container transition-colors" onclick="handleVote(this, 'down')" type="button">
+<span class="material-symbols-outlined text-[22px]">arrow_downward</span>
+</button>
+</div>
+<!-- Content -->
+<div class="flex flex-col gap-space-md min-w-0 flex-1">
+<!-- Author Profile -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-title-md text-title-md font-bold">
+                    TQ
+                  </div>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface font-bold">Trần Minh Quang</span>
+<span class="font-code-sm text-code-sm text-outline">K15 - Khoa CNTT (Đã đi làm thực tập sinh)</span>
+</div>
+</div>
+<span class="font-body-sm text-body-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">history</span> 3 giờ trước
+                </span>
+</div>
+<!-- Answer Body -->
+<div class="font-body-md text-body-md text-on-surface leading-relaxed flex flex-col gap-space-sm">
+<p>
+                  Mình bổ sung thêm kinh nghiệm thực chiến từ đồ án kỳ trước: Khi dùng Field Injection (<code class="font-code-sm text-code-sm px-1 bg-surface-container rounded">@Autowired private PaymentRepo paymentRepo;</code>), đến lúc viết Unit Test JUnit 5 nếu bạn quên không dùng Runner của Spring thì object Repo luôn bị <strong class="text-error font-semibold">NullPointerException</strong>.
+                </p>
+<p>
+                  Với Constructor Injection, bạn chỉ cần gọi <code class="font-code-sm text-code-sm px-1 bg-surface-container rounded">new PaymentService(mockPaymentRepo)</code> là test chạy ngon lành trong 10 mili-giây mà không tốn cả chục giây nạp toàn bộ Spring Container lên. Rất nên tạo thói quen này từ sớm nhé bạn!
+                </p>
+</div>
+<!-- Action triggers -->
+<div class="flex items-center gap-space-sm pt-space-xs">
+<button class="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container transition-colors font-label-md text-label-md" type="button">
+<span class="material-symbols-outlined text-[18px]">reply</span> Phản hồi
+                </button>
+<button class="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container transition-colors font-label-md text-label-md" onclick="showToast('Đã sao chép link câu trả lời!')" type="button">
+<span class="material-symbols-outlined text-[18px]">share</span> Chia sẻ
+                </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- RICH ANSWER SUBMISSION FORM -->
+<section class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md mt-space-sm">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-md text-headline-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[24px]">edit_note</span>
+            Câu trả lời của bạn
+          </h3>
+<span class="font-label-sm text-label-sm text-outline">Quy chế phản hồi học thuật UNETI</span>
+</div>
+<!-- Rich Text Simulated Editor -->
+<div class="flex flex-col rounded-lg bg-surface-container-low overflow-hidden">
+<!-- Formatting Toolbar -->
+<div class="flex flex-wrap items-center gap-1 p-space-xs bg-surface-container">
+<button class="p-1.5 rounded text-on-surface-variant hover:bg-surface-container-lowest hover:text-on-surface transition-colors" title="Bold" type="button"><span class="material-symbols-outlined text-[18px]">format_bold</span></button>
+<button class="p-1.5 rounded text-on-surface-variant hover:bg-surface-container-lowest hover:text-on-surface transition-colors" title="Italic" type="button"><span class="material-symbols-outlined text-[18px]">format_italic</span></button>
+<span class="w-px h-4 bg-outline-variant mx-1"></span>
+<button class="p-1.5 rounded text-on-surface-variant hover:bg-surface-container-lowest hover:text-on-surface transition-colors" title="Code snippet" type="button"><span class="material-symbols-outlined text-[18px]">code</span></button>
+<button class="p-1.5 rounded text-on-surface-variant hover:bg-surface-container-lowest hover:text-on-surface transition-colors" title="Blockquote" type="button"><span class="material-symbols-outlined text-[18px]">format_quote</span></button>
+<button class="p-1.5 rounded text-on-surface-variant hover:bg-surface-container-lowest hover:text-on-surface transition-colors" title="Bullet List" type="button"><span class="material-symbols-outlined text-[18px]">format_list_bulleted</span></button>
+<span class="w-px h-4 bg-outline-variant mx-1"></span>
+<button class="p-1.5 rounded text-on-surface-variant hover:bg-surface-container-lowest hover:text-on-surface transition-colors" title="Chèn liên kết" type="button"><span class="material-symbols-outlined text-[18px]">link</span></button>
+<button class="p-1.5 rounded text-on-surface-variant hover:bg-surface-container-lowest hover:text-on-surface transition-colors" title="Thêm hình ảnh / Sơ đồ" type="button"><span class="material-symbols-outlined text-[18px]">image</span></button>
+<button class="ml-auto p-1.5 rounded text-primary hover:bg-surface-container-lowest transition-colors flex items-center gap-1 font-label-sm text-label-sm font-semibold" title="Nhờ UNETI AI gợi ý cấu trúc trả lời" type="button">
+<span class="material-symbols-outlined text-[18px]">auto_awesome</span> Gợi ý bởi AI
+            </button>
+</div>
+<!-- Textarea area -->
+<textarea class="w-full p-space-md bg-surface-container-low text-on-surface placeholder:text-outline font-body-md text-body-md outline-none resize-y min-h-[180px]" placeholder="Nhập lời giải hoặc trao đổi chi tiết, đính kèm mã nguồn Java hoặc trích dẫn giáo trình nếu có..." rows="6"></textarea>
+</div>
+<!-- Form Submission footer -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-space-md pt-space-xs">
+<label class="flex items-center gap-2 cursor-pointer select-none">
+<input checked="" class="w-4 h-4 rounded text-primary-container bg-surface-container-low border-0 accent-primary-container" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Nhận thông báo qua email sinh viên khi có phản hồi mới</span>
+</label>
+<button class="w-full sm:w-auto px-space-lg py-2.5 bg-primary-container hover:bg-primary text-on-primary rounded-lg font-title-md text-title-md font-semibold transition-all shadow-sm flex items-center justify-center gap-2" onclick="submitAnswerPrompt()" type="button">
+<span class="material-symbols-outlined text-[20px]">send</span>
+<span>Gửi câu trả lời</span>
+</button>
+</div>
+</section>
+</section>
+<!-- RIGHT AUXILIARY COLUMN (32% width on desktop) -->
+<aside class="w-full lg:w-[32%] flex flex-col gap-space-lg shrink-0">
+<!-- BOX 1: Question Meta Info Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<h3 class="font-title-md text-title-md text-on-surface font-semibold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">analytics</span>
+          Thông tin câu hỏi
+        </h3>
+<div class="flex flex-col gap-space-sm font-body-sm text-body-sm">
+<div class="flex items-center justify-between py-1">
+<span class="text-outline">Trạng thái thảo luận</span>
+<span class="flex items-center gap-1 font-label-sm text-label-sm font-semibold text-secondary px-2 py-0.5 rounded-full bg-secondary-container/40">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Đã giải quyết
+            </span>
+</div>
+<div class="flex items-center justify-between py-1">
+<span class="text-outline">Số lượng câu trả lời</span>
+<span class="font-title-md text-title-md text-on-surface font-bold">3 câu</span>
+</div>
+<div class="flex items-center justify-between py-1">
+<span class="text-outline">Tổng lượt xem</span>
+<span class="font-title-md text-title-md text-on-surface font-semibold">428 lượt</span>
+</div>
+<div class="flex items-center justify-between py-1">
+<span class="text-outline">Cập nhật lần cuối</span>
+<span class="font-code-sm text-code-sm text-on-surface">10/09/2026 16:15</span>
+</div>
+<div class="flex items-center justify-between py-1">
+<span class="text-outline">Mã học phần</span>
+<span class="font-code-sm text-code-sm text-primary font-bold px-2 py-0.5 rounded bg-surface-container">IT302 - JAVA ADV</span>
+</div>
+</div>
+</div>
+<!-- BOX 2: UNETI AI Assistant Summary (AI Gradient Box) -->
+<div class="rounded-xl p-space-lg shadow-sm relative overflow-hidden bg-gradient-to-br from-primary/10 via-surface-container to-surface-container-low flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs text-primary font-title-md text-title-md font-bold">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span>UNETI AI Assistant</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-primary-container text-on-primary font-label-sm text-[11px] font-semibold tracking-wider">GPT-4o ENHANCED</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant italic">
+          Tóm tắt nhanh 3 ý chính từ câu trả lời của Thầy Tuấn &amp; cộng đồng:
+        </p>
+<ul class="flex flex-col gap-2.5 font-body-sm text-body-sm text-on-surface">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<span><strong>Bảo đảm Immutability:</strong> Dùng Constructor Injection cho phép đặt <code class="font-code-sm text-code-sm px-1 bg-surface-container rounded">final</code>, tránh thay đổi state của dependency.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<span><strong>Tối ưu hóa Unit Test:</strong> Dễ dàng inject Mock Object vào constructor mà không cần khởi tạo context nặng nề.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<span><strong>Phát hiện lỗi tức thì:</strong> Bắt lỗi Circular Dependency ngay từ thời điểm startup dự án thay vì runtime.</span>
+</li>
+</ul>
+<button class="w-full py-2 px-space-md rounded-lg bg-surface-container-lowest text-primary hover:bg-surface-container font-label-md text-label-md font-semibold transition-colors flex items-center justify-center gap-1.5 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+<span>Hỏi thêm AI về chủ đề này</span>
+</button>
+</div>
+<!-- BOX 3: Related Questions Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<h3 class="font-title-md text-title-md text-on-surface font-semibold flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-[20px]">hub</span>
+            Câu hỏi liên quan
+          </h3>
+<a class="font-label-sm text-label-sm text-primary hover:underline" href="#">Xem thêm</a>
+</div>
+<div class="flex flex-col gap-space-md font-body-sm text-body-sm">
+<a class="group flex flex-col gap-1 hover:text-primary transition-colors" href="#">
+<span class="font-label-md text-label-md text-on-surface group-hover:text-primary font-medium line-clamp-2 leading-snug">
+              Cách cấu hình Bean Scope Singleton và Prototype trong Spring Boot 3 kèm ví dụ thực tế?
+            </span>
+<div class="flex items-center gap-space-sm font-code-sm text-code-sm text-outline">
+<span class="text-secondary font-semibold">5 câu trả lời</span>
+<span>•</span>
+<span>312 lượt xem</span>
+</div>
+</a>
+<a class="group flex flex-col gap-1 hover:text-primary transition-colors" href="#">
+<span class="font-label-md text-label-md text-on-surface group-hover:text-primary font-medium line-clamp-2 leading-snug">
+              Sửa lỗi BeanCreationException: Error creating bean with name 'entityManagerFactory'
+            </span>
+<div class="flex items-center gap-space-sm font-code-sm text-code-sm text-outline">
+<span class="text-secondary font-semibold">8 câu trả lời</span>
+<span>•</span>
+<span>1.2k lượt xem</span>
+</div>
+</a>
+<a class="group flex flex-col gap-1 hover:text-primary transition-colors" href="#">
+<span class="font-label-md text-label-md text-on-surface group-hover:text-primary font-medium line-clamp-2 leading-snug">
+              So sánh hiệu năng JPA Hibernate và MyBatis trong bài toán sinh viên UNETI thi cử?
+            </span>
+<div class="flex items-center gap-space-sm font-code-sm text-code-sm text-outline">
+<span class="text-secondary font-semibold">3 câu trả lời</span>
+<span>•</span>
+<span>540 lượt xem</span>
+</div>
+</a>
+<a class="group flex flex-col gap-1 hover:text-primary transition-colors" href="#">
+<span class="font-label-md text-label-md text-on-surface group-hover:text-primary font-medium line-clamp-2 leading-snug">
+              Cách xử lý giao dịch Transactional với nhiều nguồn dữ liệu (Multiple Datasource)
+            </span>
+<div class="flex items-center gap-space-sm font-code-sm text-code-sm text-outline">
+<span class="text-outline font-semibold">Chưa có trả lời</span>
+<span>•</span>
+<span>89 lượt xem</span>
+</div>
+</a>
+</div>
+</div>
+<!-- BOX 4: Academic Integrity Guidelines -->
+<div class="bg-surface-container-low rounded-xl p-space-lg shadow-sm flex flex-col gap-space-sm">
+<h4 class="font-title-md text-title-md text-on-surface font-semibold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">school</span>
+          Quy chuẩn học thuật UNETI
+        </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          Diễn đàn USAIC khuyến khích thảo luận văn minh, xây dựng và tôn trọng bản quyền mã nguồn. Không đăng tải đề thi chưa kết thúc ca thi hoặc bài giải hộ trong giờ kiểm tra. Mọi hành vi vi phạm sẽ được xử lý theo quy chế công tác sinh viên UNETI.
+        </p>
+<div class="pt-space-xs">
+<a class="font-label-sm text-label-sm text-primary font-medium hover:underline flex items-center gap-1" href="#">
+            Đọc sổ tay Liêm chính học thuật
+            <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</a>
+</div>
+</div>
+</aside>
+</div>
+<!-- Interactive JavaScript Logic -->
+<script>
+    function handleVote(button, type) {
+      const container = button.closest('div');
+      const counter = container.querySelector('.vote-count');
+      let currentVal = parseInt(counter.textContent.trim(), 10) || 0;
+
+      // Reset sibling votes
+      const isCurrentlyActive = button.classList.contains('text-secondary') || button.classList.contains('text-error');
+      container.querySelectorAll('button').forEach(btn => {
+        btn.classList.remove('text-secondary', 'text-error', 'bg-surface-container');
+        btn.classList.add('text-on-surface-variant');
+      });
+
+      if (!isCurrentlyActive) {
+        if (type === 'up') {
+          button.classList.remove('text-on-surface-variant');
+          button.classList.add('text-secondary', 'bg-surface-container');
+          counter.textContent = currentVal + 1;
+          showToast('Đã bỏ phiếu bình chọn hữu ích!');
+        } else {
+          button.classList.remove('text-on-surface-variant');
+          button.classList.add('text-error', 'bg-surface-container');
+          counter.textContent = Math.max(0, currentVal - 1);
+          showToast('Đã ghi nhận ý kiến!');
+        }
+      } else {
+        // Toggle back
+        counter.textContent = type === 'up' ? Math.max(0, currentVal - 1) : currentVal + 1;
+      }
+    }
+
+    function toggleBookmark(button) {
+      const icon = button.querySelector('.material-symbols-outlined');
+      const label = button.querySelector('span:not(.material-symbols-outlined)');
+      if (icon.textContent === 'bookmark_border') {
+        icon.textContent = 'bookmark';
+        icon.style.fontVariationSettings = "'FILL' 1";
+        button.classList.add('text-primary');
+        label.textContent = 'Đã lưu';
+        showToast('Đã lưu câu hỏi vào danh sách học tập cá nhân!');
+      } else {
+        icon.textContent = 'bookmark_border';
+        icon.style.fontVariationSettings = "'FILL' 0";
+        button.classList.remove('text-primary');
+        label.textContent = 'Lưu bài';
+        showToast('Đã xóa khỏi danh sách lưu trữ!');
+      }
+    }
+
+    function toggleOptionsMenu(button) {
+      const menu = button.nextElementSibling;
+      menu.classList.toggle('hidden');
+      
+      const closeHandler = (e) => {
+        if (!button.contains(e.target) && !menu.contains(e.target)) {
+          menu.classList.add('hidden');
+          document.removeEventListener('click', closeHandler);
+        }
+      };
+      document.addEventListener('click', closeHandler);
+    }
+
+    function copyCode(btn, codeId) {
+      const code = document.getElementById(codeId).innerText;
+      navigator.clipboard.writeText(code).then(() => {
+        showToast('Đã sao chép mã nguồn Java vào clipboard!');
+        const originalHtml = btn.innerHTML;
+        btn.innerHTML = '<span class="material-symbols-outlined text-[16px] text-secondary-fixed">check</span><span>Đã chép</span>';
+        setTimeout(() => {
+          btn.innerHTML = originalHtml;
+        }, 2000);
+      });
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById('toastNotification');
+      const msg = document.getElementById('toastMsg');
+      msg.textContent = message;
+      toast.classList.remove('translate-y-16', 'opacity-0', 'pointer-events-none');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-16', 'opacity-0', 'pointer-events-none');
+      }, 3000);
+    }
+
+    function submitAnswerPrompt() {
+      showToast('Câu trả lời của bạn đã được ghi nhận và gửi duyệt!');
+    }
+  </script>
+</div></main><footer class="w-full bg-surface-container-lowest py-space-lg mt-auto shadow-[0_-1px_8px_rgba(0,0,0,0.02)]"><div class="w-full px-margin-desktop flex flex-col md:flex-row items-center justify-between gap-space-md"><div class="flex items-center gap-space-md"><span class="font-label-sm text-label-sm text-outline">© 2024 Trường Đại học Kinh tế - Kỹ thuật Công nghiệp (UNETI)</span><span class="text-outline-variant">•</span><span class="font-label-sm text-label-sm text-outline">Hệ thống tri thức số USAIC</span></div><div class="flex items-center gap-space-lg"><a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Quy chế học thuật</a><a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Hướng dẫn trích dẫn</a><a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Chính sách liêm chính</a><a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Hỗ trợ kỹ thuật</a></div></div></footer></div></body></html>

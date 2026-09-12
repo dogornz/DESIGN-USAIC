@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <style>
+        @layer base {
+
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                overscroll-behavior: none;
+            }
+
+            main>:first-child {
+                margin-top: 0 !important;
+            }
+
+            main>:last-child {
+                margin-bottom: 0 !important;
+            }
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script id="tailwind-config">tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error-container": "#ffdad6",
+                        "error": "#ba1a1a",
+                        "inverse-on-surface": "#ebf1ff",
+                        "tertiary-container": "#964f00",
+                        "surface-container": "#e7eefe",
+                        "on-primary-container": "#d4dcff",
+                        "on-primary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed": "#00174d",
+                        "on-tertiary-fixed": "#2f1500",
+                        "secondary-fixed-dim": "#63dca6",
+                        "tertiary-fixed": "#ffdcc4",
+                        "primary-container": "#1a56db",
+                        "surface-dim": "#d3daea",
+                        "on-secondary-container": "#00714c",
+                        "outline-variant": "#c3c5d7",
+                        "inverse-primary": "#b5c4ff",
+                        "on-secondary": "#ffffff",
+                        "surface-bright": "#f9f9ff",
+                        "on-secondary-fixed-variant": "#005236",
+                        "primary": "#003fb1",
+                        "surface-tint": "#1353d8",
+                        "inverse-surface": "#2a313d",
+                        "surface-variant": "#dce2f3",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed-dim": "#b5c4ff",
+                        "surface-container-highest": "#dce2f3",
+                        "on-secondary-fixed": "#002113",
+                        "on-tertiary-container": "#ffd6b8",
+                        "surface-container-low": "#f0f3ff",
+                        "primary-fixed": "#dbe1ff",
+                        "tertiary": "#733b00",
+                        "secondary-container": "#7ef6be",
+                        "outline": "#737686",
+                        "on-tertiary-fixed-variant": "#6f3900",
+                        "on-surface": "#151c27",
+                        "tertiary-fixed-dim": "#ffb77f",
+                        "on-background": "#151c27",
+                        "secondary-fixed": "#81f9c1",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-surface-variant": "#434654",
+                        "on-primary-fixed-variant": "#003dab",
+                        "surface-container-high": "#e2e8f8",
+                        "background": "#f9f9ff",
+                        "secondary": "#006c49",
+                        "surface": "#f9f9ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "space-sm": "0.5rem",
+                        "space-xs": "0.25rem",
+                        "space-lg": "1.5rem",
+                        "gutter": "1rem",
+                        "margin": "1rem",
+                        "gutter-desktop": "1.5rem",
+                        "space-md": "1rem",
+                        "margin-desktop": "2rem",
+                        "space-xl": "2rem"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "title-md": ["Inter"],
+                        "code-md": ["JetBrains Mono"],
+                        "body-sm": ["Inter"],
+                        "display-lg-mobile": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "code-sm": ["JetBrains Mono"],
+                        "label-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                        "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+                        "code-md": ["13px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+                        "display-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "headline-sm": ["18px", { "lineHeight": "26px", "fontWeight": "600" }],
+                        "display-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+                        "code-sm": ["11px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }</script>
+</head>
+
+<body class="bg-background font-body-md text-body-md text-on-surface antialiased">
+    <header
+        class="fixed top-0 left-0 right-0 h-16 z-50 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+        <div class="h-16 w-full px-margin-desktop flex items-center justify-between gap-space-lg">
+            <div class="flex items-center gap-space-md min-w-[220px]"><img alt="USAIC - UNETI Search And Intelligent Companion modern academic AI search logo mark and typography. Brand logo. - Primary color: #1a56db
+- Font: inter
+- Mode: light
+- Roundness: rounded-md
+" class="h-8 w-auto object-contain"
+                    src="https://lh3.googleusercontent.com/aida/AEtjO1XmzxKviDFNC-I1h1WiIQ8nCt8ZGhlry7ugrIndOse9eOMHW1aw9SrMPdjy3ZgRWXtXo3785l0iLHjWWfhGLMUKbieH5NvUnb0R7YMYml_6ERsqkagSsSDys3hZmcEG-AkNb8MAnsyyK4DBgejcy2MNO377T8IdfS6vbctlWJoR5ZVMx5EwgjsryCcV0a8xJ8O-I12QiVnosCu-uyZAAjTsaiB3VQyFOMkZKzjnWvJEXNILvQcm7oWBCmkb" />
+                <div class="flex flex-col"><span
+                        class="font-title-md text-title-md text-primary leading-tight tracking-tight">USAIC
+                        UNETI</span><span
+                        class="font-code-sm text-code-sm text-outline tracking-wider uppercase">Academic
+                        Companion</span></div>
+            </div>
+            <div class="flex-1 max-w-2xl mx-auto">
+                <div class="relative flex items-center w-full"><span
+                        class="material-symbols-outlined absolute left-space-md text-outline pointer-events-none text-[20px]">search</span><input
+                        class="w-full h-10 pl-11 pr-20 bg-surface-container-low rounded-lg text-on-surface placeholder:text-outline font-body-sm text-body-sm outline-none focus:bg-surface-container-lowest focus:shadow-[0_2px_10px_rgba(26,86,219,0.08)] transition-all"
+                        placeholder="Tìm kiếm câu hỏi, môn học (IT101, ACC202), tài liệu giáo trình..." type="text" />
+                    <div class="absolute right-space-sm flex items-center gap-1"><kbd
+                            class="px-1.5 py-0.5 bg-surface-container-highest rounded text-on-surface-variant font-code-sm text-code-sm border-0">⌘K</kbd>
+                    </div>
+                </div>
+            </div>
+            <div class="flex items-center gap-space-md min-w-[200px] justify-end"><button
+                    class="relative p-space-sm rounded-full text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"
+                    type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span
+                        class="absolute top-1 right-1 w-4 h-4 bg-error text-on-error rounded-full font-label-sm text-[10px] flex items-center justify-center font-bold">3</span></button><button
+                    class="p-space-sm rounded-full text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"
+                    type="button"><span class="material-symbols-outlined text-[22px]">help</span></button>
+                <div class="flex items-center gap-space-sm pl-space-sm ml-space-xs">
+                    <div class="flex flex-col text-right hidden lg:flex"><span
+                            class="font-label-md text-label-md text-on-surface leading-tight font-semibold">Nguyễn Văn
+                            Khoa</span><span class="font-label-sm text-label-sm text-outline">CNTT - K16</span></div>
+                    <div class="relative cursor-pointer"><img alt="Profile" class="w-8 h-8 rounded-full object-cover"
+                            src="https://lh3.googleusercontent.com/aida/AEtjO1WJlP-0TIhjvIB31Sr1cfyDafSxWPZoAFm8JZ8GuwbGZDIFHh2V-d82cefCPrsqaQrImyH-oX_S4y-ocTtz-4zS50r2wZAQIN7Tp_E8zHO6NPjmQh_YTKnXqVuPsmSdujOnj1wpEyHcZXND5tyOwr9k_WgJg7Ff_UwfUTmPw1GH4lcYUsGREcn1DWdUHR-wLTEwgEaY06MK0bfkWevInacY45jjLT3qEgFPvd9SCDoXtvaBIAnjmhHGzRo" /><span
+                            class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-secondary rounded-full ring-2 ring-surface-container-lowest"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <aside
+        class="fixed left-0 top-16 bottom-0 w-60 z-40 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.03)] flex flex-col justify-between overflow-y-auto">
+        <div class="py-space-md px-space-sm flex flex-col gap-space-xs">
+            <div class="px-space-md py-space-xs"><span
+                    class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">Khám phá học
+                    thuật</span></div>
+            <nav class="flex flex-col gap-1"
+                data-active-classes="bg-primary-container text-on-primary font-semibold shadow-sm"><a
+                    aria-current="page"
+                    class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg transition-colors bg-primary-container text-on-primary font-semibold shadow-sm"
+                    data-path="trang-chu" href="#"><span
+                        class="material-symbols-outlined text-[20px]">home</span><span>Trang chủ</span></a><a
+                    class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-label-md text-label-md"
+                    data-path="dien-dan-hoi-dap" href="#"><span
+                        class="material-symbols-outlined text-[20px]">forum</span><span>Diễn đàn Q&amp;A</span></a><a
+                    class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-label-md text-label-md"
+                    data-path="kho-tai-lieu" href="#"><span
+                        class="material-symbols-outlined text-[20px]">menu_book</span><span>Kho tài liệu</span></a><a
+                    class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-label-md text-label-md"
+                    data-path="chu-de-tags" href="#"><span
+                        class="material-symbols-outlined text-[20px]">label</span><span>Tags</span></a></nav>
+            <div class="px-space-md pt-space-md pb-space-xs mt-space-xs"><span
+                    class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">Không gian
+                    cá nhân</span></div>
+            <nav class="flex flex-col gap-1"
+                data-active-classes="bg-primary-container text-on-primary font-semibold shadow-sm"><a
+                    class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-label-md text-label-md"
+                    data-path="ho-so-hoc-tap" href="#"><span
+                        class="material-symbols-outlined text-[20px]">account_circle</span><span>Hồ sơ của
+                        tôi</span></a><a
+                    class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-label-md text-label-md"
+                    data-path="cau-hoi-cua-toi" href="#"><span
+                        class="material-symbols-outlined text-[20px]">help_outline</span><span>Câu hỏi của
+                        tôi</span></a><a
+                    class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-label-md text-label-md"
+                    data-path="tai-lieu-cua-toi" href="#"><span
+                        class="material-symbols-outlined text-[20px]">bookmark_border</span><span>Tài liệu của
+                        tôi</span></a></nav>
+            <div class="px-space-md pt-space-md pb-space-xs mt-space-xs"><span
+                    class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">Ban điều
+                    hành</span></div>
+            <nav class="flex flex-col gap-1"
+                data-active-classes="bg-primary-container text-on-primary font-semibold shadow-sm"><a
+                    class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-label-md text-label-md"
+                    data-path="kiem-duyet-noi-dung" href="#"><span
+                        class="material-symbols-outlined text-[20px]">verified_user</span><span>Kiểm duyệt</span><span
+                        class="ml-auto bg-tertiary-fixed text-tertiary px-1.5 py-0.5 rounded font-label-sm text-[10px] font-semibold">MOD</span></a><a
+                    class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-label-md text-label-md"
+                    data-path="quan-tri-he-thong" href="#"><span
+                        class="material-symbols-outlined text-[20px]">admin_panel_settings</span><span>Quản
+                        trị</span><span
+                        class="ml-auto bg-primary-fixed text-primary px-1.5 py-0.5 rounded font-label-sm text-[10px] font-semibold">ADMIN</span></a>
+            </nav>
+        </div>
+        <div class="p-space-md m-space-sm rounded-xl bg-surface-container-low flex flex-col gap-space-xs">
+            <div class="flex items-center gap-space-sm text-primary font-title-md text-title-md"><span
+                    class="material-symbols-outlined text-[20px]">auto_awesome</span><span>UNETI AI Bot</span></div>
+            <p class="font-body-sm text-body-sm text-on-surface-variant">Trợ lý giải bài tập và tra cứu đề thi mẫu theo
+                chuẩn khoa CNTT &amp; Kinh tế.</p><button
+                class="mt-space-xs w-full py-1.5 px-space-sm bg-primary-container hover:bg-primary text-on-primary rounded-lg font-label-sm text-label-sm transition-colors text-center font-medium"
+                type="button">Đặt câu hỏi AI</button>
+        </div>
+    </aside>
+    <div class="pl-60">
+        <main class="w-full pt-16 min-h-[calc(100vh-80px)] bg-background px-margin-desktop py-space-lg">
+            <div class="flex flex-col w-full">
+                <div class="w-full bg-surface-container-lowest rounded-xl shadow-sm p-space-md mb-space-md">
+                    <form class="flex flex-col md:flex-row items-stretch gap-space-sm" id="academicSearchForm"
+                        onsubmit="event.preventDefault();">
+                        <div
+                            class="relative flex-1 flex items-center bg-surface-container-low rounded-lg focus-within:bg-surface-container-lowest focus-within:shadow-md transition-all">
+                            <span
+                                class="material-symbols-outlined absolute left-space-md text-primary text-[22px]">search</span>
+                            <input
+                                class="w-full h-12 pl-12 pr-12 bg-transparent text-on-surface font-body-lg text-body-lg outline-none placeholder:text-outline"
+                                id="mainSearchInput"
+                                placeholder="Nhập câu hỏi học thuật, mã môn (IT6015), bài giảng hoặc khái niệm..."
+                                type="text" value="Lập trình Java Spring Boot" />
+                            <button class="absolute right-space-md text-outline hover:text-on-surface transition-colors"
+                                onclick="document.getElementById('mainSearchInput').value=''; document.getElementById('mainSearchInput').focus();"
+                                type="button">
+                                <span class="material-symbols-outlined text-[20px]">close</span>
+                            </button>
+                        </div>
+                        <div class="flex items-center gap-space-xs">
+                            <div class="relative group">
+                                <button
+                                    class="h-12 px-space-md bg-surface-container rounded-lg text-on-surface-variant hover:text-on-surface flex items-center gap-space-xs font-label-md text-label-md transition-colors"
+                                    type="button">
+                                    <span class="material-symbols-outlined text-[18px]">tune</span>
+                                    <span class="hidden sm:inline">Bộ lọc nhanh</span>
+                                    <span class="material-symbols-outlined text-[16px]">expand_more</span>
+                                </button>
+                            </div>
+                            <button
+                                class="h-12 px-space-xl bg-primary-container hover:bg-primary text-on-primary rounded-lg font-title-md text-title-md flex items-center justify-center gap-space-xs shadow-sm transition-all"
+                                type="submit">
+                                <span class="material-symbols-outlined text-[20px]">search</span>
+                                <span>Tìm kiếm</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-xs pb-space-sm">
+                    <div class="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm">
+                        <span class="material-symbols-outlined text-secondary text-[16px]">verified</span>
+                        <span>Tìm thấy khoảng <strong class="text-on-surface font-semibold">48</strong> kết quả học
+                            thuật cho “<em>Lập trình Java Spring Boot</em>” trong <span
+                                class="font-code-sm text-code-sm text-primary">0.18 giây</span></span>
+                    </div>
+                    <div class="flex items-center gap-space-xs font-code-sm text-code-sm text-outline">
+                        <span class="material-symbols-outlined text-[14px]">history_edu</span>
+                        <span>Dữ liệu lưu trữ Khoa CNTT UNETI • Cập nhật hôm nay</span>
+                    </div>
+                </div>
+                <div class="flex items-center gap-space-sm overflow-x-auto py-space-xs mb-space-md">
+                    <button
+                        class="px-space-md py-2 bg-primary text-on-primary rounded-full font-label-md text-label-md shadow-sm flex items-center gap-1.5 shrink-0 transition-transform active:scale-95">
+                        <span class="material-symbols-outlined text-[18px]">dataset</span>
+                        <span>Tất cả</span>
+                        <span
+                            class="ml-1 bg-surface-container-lowest/20 px-1.5 py-0.5 rounded-full font-label-sm text-label-sm">48</span>
+                    </button>
+                    <button
+                        class="px-space-md py-2 bg-surface-container-lowest hover:bg-surface-container text-on-surface-variant hover:text-on-surface rounded-full font-label-md text-label-md shrink-0 flex items-center gap-1.5 transition-colors">
+                        <span class="material-symbols-outlined text-[18px]">forum</span>
+                        <span>Câu hỏi Q&amp;A</span>
+                        <span
+                            class="ml-1 bg-surface-container-high px-1.5 py-0.5 rounded-full font-label-sm text-label-sm text-on-surface">32</span>
+                    </button>
+                    <button
+                        class="px-space-md py-2 bg-surface-container-lowest hover:bg-surface-container text-on-surface-variant hover:text-on-surface rounded-full font-label-md text-label-md shrink-0 flex items-center gap-1.5 transition-colors">
+                        <span class="material-symbols-outlined text-[18px]">library_books</span>
+                        <span>Tài liệu &amp; Đề thi</span>
+                        <span
+                            class="ml-1 bg-surface-container-high px-1.5 py-0.5 rounded-full font-label-sm text-label-sm text-on-surface">16</span>
+                    </button>
+                    <button
+                        class="px-space-md py-2 bg-surface-container-lowest hover:bg-surface-container text-on-surface-variant hover:text-on-surface rounded-full font-label-md text-label-md shrink-0 flex items-center gap-1.5 transition-colors">
+                        <span class="material-symbols-outlined text-[18px]">code</span>
+                        <span>Source code Lab</span>
+                        <span
+                            class="ml-1 bg-surface-container-high px-1.5 py-0.5 rounded-full font-label-sm text-label-sm text-on-surface">7</span>
+                    </button>
+                </div>
+                <div
+                    class="bg-surface-container-lowest rounded-xl p-space-md mb-space-lg shadow-sm flex flex-wrap items-center justify-between gap-space-md">
+                    <div class="flex flex-wrap items-center gap-space-md">
+                        <div class="flex items-center gap-space-xs">
+                            <label class="font-label-sm text-label-sm text-outline flex items-center gap-1"
+                                for="facultyFilter">
+                                <span class="material-symbols-outlined text-[16px]">account_balance</span>
+                                <span>Khoa:</span>
+                            </label>
+                            <select
+                                class="bg-surface-container-low text-on-surface rounded-lg px-2.5 py-1.5 font-label-sm text-label-sm outline-none hover:bg-surface-container transition-colors cursor-pointer"
+                                id="facultyFilter">
+                                <option selected="" value="cntt">Công nghệ thông tin</option>
+                                <option value="dientu">Điện tử - Tự động hóa</option>
+                                <option value="kinhte">Kinh tế &amp; Quản trị</option>
+                            </select>
+                        </div>
+                        <div class="flex items-center gap-space-xs">
+                            <label class="font-label-sm text-label-sm text-outline flex items-center gap-1"
+                                for="subjectFilter">
+                                <span class="material-symbols-outlined text-[16px]">book</span>
+                                <span>Môn học:</span>
+                            </label>
+                            <select
+                                class="bg-surface-container-low text-on-surface rounded-lg px-2.5 py-1.5 font-label-sm text-label-sm outline-none hover:bg-surface-container transition-colors cursor-pointer"
+                                id="subjectFilter">
+                                <option value="all">Tất cả học phần</option>
+                                <option selected="" value="cd-java">Chuyên đề Java (IT6015)</option>
+                                <option value="web-dev">Lập trình Web</option>
+                                <option value="dsa">Cấu trúc dữ liệu &amp; Giải thuật</option>
+                            </select>
+                        </div>
+                        <div class="flex items-center gap-space-xs">
+                            <span class="font-label-sm text-label-sm text-outline">Bộ lọc tích cực:</span>
+                            <span
+                                class="inline-flex items-center gap-1 bg-surface-container px-2 py-0.5 rounded text-primary font-code-sm text-code-sm">
+                                #SpringBoot
+                                <span
+                                    class="material-symbols-outlined text-[12px] cursor-pointer hover:text-error">close</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-space-xs ml-auto">
+                        <label class="font-label-sm text-label-sm text-outline flex items-center gap-1"
+                            for="sortBySelect">
+                            <span class="material-symbols-outlined text-[16px]">sort</span>
+                            <span>Sắp xếp:</span>
+                        </label>
+                        <select
+                            class="bg-surface-container-low text-on-surface rounded-lg px-2.5 py-1.5 font-label-sm text-label-sm outline-none hover:bg-surface-container transition-colors font-medium cursor-pointer"
+                            id="sortBySelect">
+                            <option selected="" value="relevance">Độ liên quan nhất</option>
+                            <option value="newest">Mới nhất (Kỳ II 2024-2025)</option>
+                            <option value="rating">Đánh giá cao nhất (Votes)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+                    <div class="lg:col-span-8 flex flex-col gap-space-md min-w-0">
+                        <article
+                            class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-shadow">
+                            <div
+                                class="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm mb-1.5">
+                                <span class="material-symbols-outlined text-[16px] text-primary">school</span>
+                                <span class="font-medium text-primary">UNETI</span>
+                                <span>&gt;</span>
+                                <span>Khoa CNTT</span>
+                                <span>&gt;</span>
+                                <span class="text-on-surface font-medium">Chuyên đề Java Web (IT6015)</span>
+                            </div>
+                            <h3 class="font-headline-sm text-headline-sm mb-space-xs leading-snug">
+                                <a class="text-primary hover:underline flex items-start gap-1" href="#">
+                                    <span>Giải thích kiến trúc Dependency Injection và Inversion of Control (IoC) trong
+                                        <mark
+                                            class="bg-tertiary-fixed text-on-tertiary-fixed rounded px-1 font-semibold">Java
+                                            Spring Boot</mark></span>
+                                    <span
+                                        class="material-symbols-outlined text-[18px] opacity-75 shrink-0 mt-1">open_in_new</span>
+                                </a>
+                            </h3>
+                            <p
+                                class="font-body-md text-body-md text-on-surface-variant mb-space-md line-clamp-3 leading-relaxed">
+                                Trong giáo trình <mark class="bg-tertiary-fixed text-on-tertiary-fixed rounded px-1">Lập
+                                    trình Java Spring Boot</mark> tại UNETI, nguyên lý IoC Container chịu trách nhiệm
+                                quản lý vòng đời của Bean (@Component, @Service, @Repository). Việc sử dụng @Autowired
+                                giúp tự động tiêm các phụ thuộc (Dependency Injection) thay vì khởi tạo thủ công bằng
+                                toán tử new, hỗ trợ viết Unit Test mock repository dễ dàng...
+                            </p>
+                            <div
+                                class="bg-surface-container-low rounded-lg p-space-sm mb-space-md font-code-sm text-code-sm flex items-center justify-between text-on-surface">
+                                <div class="flex items-center gap-2 truncate">
+                                    <span
+                                        class="px-1.5 py-0.5 bg-surface-container-highest rounded text-primary font-semibold">Code
+                                        mẫu</span>
+                                    <code
+                                        class="truncate text-outline-variant text-on-surface">@RestController @RequestMapping("/api/v1/sinhvien") public class SinhVienController { ... }</code>
+                                </div>
+                                <button class="text-primary hover:underline shrink-0 text-label-sm font-label-sm ml-2"
+                                    type="button">Sao chép</button>
+                            </div>
+                            <div
+                                class="flex flex-wrap items-center justify-between gap-space-sm pt-space-xs text-on-surface-variant font-body-sm text-body-sm">
+                                <div class="flex items-center gap-space-md">
+                                    <div class="flex items-center gap-1.5">
+                                        <img class="w-6 h-6 rounded-full object-cover"
+                                            data-alt="Portrait of a Vietnamese male IT university student wearing a crisp white polo shirt with navy collar on a campus background with natural morning lighting"
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBF1lDwawN7NTSAZa6q_1WZ0Ey2dE2vDgAnAa62oS1fSbicH_9_fV3pYTInsmB76koRKQO7EOIBrGFzuiKhIuvvRSiIFTIm8usX4AhiCGVlhWrb0HbcsUMlgK03SboF0oE-LRw9dUYkC4Bje869Q1M1d8I1xXgI1A6loEALJbL3fqFX0QvElIO02Pux7zk3GtTIEPduuAbjr_Ut8mLQDe6DSf71RcxkDfWlByrdiAY29yVDxyZAX5CIMw" />
+                                        <span class="font-medium text-on-surface">Trần Minh Quang</span>
+                                        <span class="text-outline">• CNTT K15</span>
+                                    </div>
+                                    <span class="text-outline">2 ngày trước</span>
+                                </div>
+                                <div class="flex items-center gap-space-sm">
+                                    <span
+                                        class="inline-flex items-center gap-1 bg-secondary-container/40 text-on-secondary-container px-2 py-0.5 rounded font-label-sm text-label-sm font-medium">
+                                        <span class="material-symbols-outlined text-[14px]">check_circle</span>
+                                        Lời giải được duyệt
+                                    </span>
+                                    <span class="inline-flex items-center gap-1 text-secondary font-medium">
+                                        <span class="material-symbols-outlined text-[16px]">thumb_up</span>
+                                        18 Votes
+                                    </span>
+                                    <span class="inline-flex items-center gap-1 text-outline">
+                                        <span class="material-symbols-outlined text-[16px]">mode_comment</span>
+                                        6 Trả lời
+                                    </span>
+                                </div>
+                            </div>
+                        </article>
+                        <article
+                            class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-shadow">
+                            <div
+                                class="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm mb-1.5">
+                                <span class="material-symbols-outlined text-[16px] text-error">picture_as_pdf</span>
+                                <span class="font-medium text-primary">Tài liệu học tập chính quy</span>
+                                <span>&gt;</span>
+                                <span>Thư viện số UNETI</span>
+                                <span>&gt;</span>
+                                <span class="text-on-surface font-medium">Giáo trình 2025</span>
+                            </div>
+                            <div
+                                class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-md bg-surface-container-low rounded-xl p-space-md mb-space-sm">
+                                <div class="flex items-start gap-space-md min-w-0">
+                                    <div
+                                        class="w-12 h-14 bg-error text-on-error rounded-lg flex flex-col items-center justify-center shrink-0 shadow-sm">
+                                        <span class="material-symbols-outlined text-[24px]">description</span>
+                                        <span class="font-code-sm text-[9px] tracking-wider font-bold">PDF</span>
+                                    </div>
+                                    <div class="flex flex-col min-w-0">
+                                        <a class="font-title-md text-title-md text-primary hover:underline truncate"
+                                            href="#">
+                                            Giáo trình <mark
+                                                class="bg-tertiary-fixed text-on-tertiary-fixed rounded px-1">Spring
+                                                Boot</mark> &amp; Hibernate UNETI 2025.pdf
+                                        </a>
+                                        <div
+                                            class="flex items-center gap-space-sm font-body-sm text-body-sm text-outline mt-0.5">
+                                            <span>Dung lượng: <strong class="text-on-surface">3.4 MB</strong></span>
+                                            <span>•</span>
+                                            <span>284 trang</span>
+                                            <span>•</span>
+                                            <span class="text-secondary font-medium">Đã kiểm duyệt bởi Khoa CNTT</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-space-xs shrink-0">
+                                    <button
+                                        class="px-space-md py-2 bg-surface-container hover:bg-surface-container-high text-on-surface rounded-lg font-label-sm text-label-sm flex items-center gap-1 transition-colors"
+                                        type="button">
+                                        <span class="material-symbols-outlined text-[16px]">visibility</span>
+                                        <span>Xem trước</span>
+                                    </button>
+                                    <button
+                                        class="px-space-md py-2 bg-primary-container hover:bg-primary text-on-primary rounded-lg font-label-sm text-label-sm flex items-center gap-1 shadow-sm transition-colors"
+                                        type="button">
+                                        <span class="material-symbols-outlined text-[16px]">download</span>
+                                        <span>Tải xuống</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">
+                                Tài liệu chuẩn đầu ra môn học Chuyên đề Java. Bao gồm 8 chương từ cấu hình Maven, Spring
+                                Data JPA, RESTful Web Services, Spring Security với JWT token và hướng dẫn triển khai
+                                Docker container.
+                            </p>
+                        </article>
+                        <article
+                            class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-shadow">
+                            <div
+                                class="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm mb-1.5">
+                                <span class="material-symbols-outlined text-[16px] text-primary">school</span>
+                                <span class="font-medium text-primary">UNETI</span>
+                                <span>&gt;</span>
+                                <span>Khoa CNTT</span>
+                                <span>&gt;</span>
+                                <span class="text-on-surface font-medium">Đồ án môn học K16</span>
+                            </div>
+                            <h3 class="font-headline-sm text-headline-sm mb-space-xs leading-snug">
+                                <a class="text-primary hover:underline flex items-start gap-1" href="#">
+                                    <span>Sửa lỗi kết nối MySQL: "Cannot create PoolableConnectionFactory" khi chạy dự
+                                        án <mark
+                                            class="bg-tertiary-fixed text-on-tertiary-fixed rounded px-1 font-semibold">Java
+                                            Spring Boot</mark></span>
+                                    <span
+                                        class="material-symbols-outlined text-[18px] opacity-75 shrink-0 mt-1">open_in_new</span>
+                                </a>
+                            </h3>
+                            <p
+                                class="font-body-md text-body-md text-on-surface-variant mb-space-md line-clamp-3 leading-relaxed">
+                                Khi cấu hình file application.properties cho đồ án <mark
+                                    class="bg-tertiary-fixed text-on-tertiary-fixed rounded px-1">Java Spring
+                                    Boot</mark> với MySQL 8.0, gặp exception lúc khởi động server Tomcat. Lỗi thường do
+                                thiếu cấu hình timezone <code>serverTimezone=UTC</code> hoặc xung đột thông tin cấp
+                                quyền tài khoản root...
+                            </p>
+                            <div
+                                class="flex flex-wrap items-center justify-between gap-space-sm pt-space-xs text-on-surface-variant font-body-sm text-body-sm">
+                                <div class="flex items-center gap-space-md">
+                                    <div class="flex items-center gap-1.5">
+                                        <img class="w-6 h-6 rounded-full object-cover"
+                                            data-alt="Female Vietnamese software engineering student with glasses smiling in a modern university computer lab with ambient blue and warm interior lighting"
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAYSIUWJtojaQYXSLt6MPlYBFTZN3xYmXqkpjsTGovjho6EUSXUFTsCW18bgStRAroDn5tmoeM-QB2fZK3M-4UgkNnOne1idBTzHkVDv3GRU257mLgRo5lvmvQohis1de90JFiYf-CK-2OlmYWGQ0td6f0XKbl03RM6VUigCwSg82M0HSHxnBLKdNg_9Fugs5eenuZOn4tnU64pWC3TegPVAzyqHe82lboJqYJ5a8ognRJBFrZr355qg" />
+                                        <span class="font-medium text-on-surface">Lê Thị Mai Hương</span>
+                                        <span class="text-outline">• Kỹ thuật phần mềm</span>
+                                    </div>
+                                    <span class="text-outline">4 ngày trước</span>
+                                </div>
+                                <div class="flex items-center gap-space-sm">
+                                    <span
+                                        class="inline-flex items-center gap-1 bg-secondary-container/40 text-on-secondary-container px-2 py-0.5 rounded font-label-sm text-label-sm font-medium">
+                                        <span class="material-symbols-outlined text-[14px]">check_circle</span>
+                                        Lời giải được duyệt
+                                    </span>
+                                    <span class="inline-flex items-center gap-1 text-secondary font-medium">
+                                        <span class="material-symbols-outlined text-[16px]">thumb_up</span>
+                                        24 Votes
+                                    </span>
+                                    <span class="inline-flex items-center gap-1 text-outline">
+                                        <span class="material-symbols-outlined text-[16px]">mode_comment</span>
+                                        9 Trả lời
+                                    </span>
+                                </div>
+                            </div>
+                        </article>
+                        <article
+                            class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-shadow">
+                            <div
+                                class="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm mb-1.5">
+                                <span class="material-symbols-outlined text-[16px] text-tertiary">quiz</span>
+                                <span class="font-medium text-primary">Ngân hàng đề thi</span>
+                                <span>&gt;</span>
+                                <span>Kỳ phụ 2024</span>
+                                <span>&gt;</span>
+                                <span class="text-on-surface font-medium">Bộ đề thi trắc nghiệm &amp; thực hành</span>
+                            </div>
+                            <h3 class="font-headline-sm text-headline-sm mb-space-xs leading-snug">
+                                <a class="text-primary hover:underline flex items-start gap-1" href="#">
+                                    <span>Tổng hợp 50 câu hỏi ôn tập thi cuối kỳ môn <mark
+                                            class="bg-tertiary-fixed text-on-tertiary-fixed rounded px-1 font-semibold">Lập
+                                            trình Java Spring Boot</mark> &amp; Microservices</span>
+                                    <span
+                                        class="material-symbols-outlined text-[18px] opacity-75 shrink-0 mt-1">open_in_new</span>
+                                </a>
+                            </h3>
+                            <p
+                                class="font-body-md text-body-md text-on-surface-variant mb-space-md line-clamp-3 leading-relaxed">
+                                Đề cương có đáp án chi tiết dành cho sinh viên UNETI các lớp K14, K15 ôn tập. Bao gồm
+                                các câu hỏi lý thuyết chuyên sâu về Spring MVC, DispatcherServlet, Spring Security
+                                Filter Chain và câu hỏi trắc nghiệm cấu hình microservice Eureka Server...
+                            </p>
+                            <div
+                                class="flex flex-wrap items-center justify-between gap-space-sm pt-space-xs text-on-surface-variant font-body-sm text-body-sm">
+                                <div class="flex items-center gap-space-md">
+                                    <div class="flex items-center gap-1.5">
+                                        <span
+                                            class="w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-[10px]">BM</span>
+                                        <span class="font-medium text-on-surface">Bộ môn CNPM</span>
+                                        <span class="text-outline">• Khoa CNTT</span>
+                                    </div>
+                                    <span class="text-outline">1 tuần trước</span>
+                                </div>
+                                <div class="flex items-center gap-space-sm">
+                                    <span
+                                        class="inline-flex items-center gap-1 bg-surface-container px-2 py-0.5 rounded font-label-sm text-label-sm text-on-surface-variant">
+                                        <span class="material-symbols-outlined text-[14px]">attachment</span>
+                                        2 Đính kèm
+                                    </span>
+                                    <span class="inline-flex items-center gap-1 text-secondary font-medium">
+                                        <span class="material-symbols-outlined text-[16px]">thumb_up</span>
+                                        52 Votes
+                                    </span>
+                                    <span class="inline-flex items-center gap-1 text-outline">
+                                        <span class="material-symbols-outlined text-[16px]">mode_comment</span>
+                                        14 Thảo luận
+                                    </span>
+                                </div>
+                            </div>
+                        </article>
+                        <nav aria-label="Pagination"
+                            class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm mt-space-md flex flex-col sm:flex-row items-center justify-between gap-space-md">
+                            <div class="font-body-sm text-body-sm text-outline">
+                                Hiển thị trang <span class="text-on-surface font-semibold">1</span> trên <span
+                                    class="text-on-surface font-semibold">5</span> (48 kết quả)
+                            </div>
+                            <div class="flex items-center gap-1">
+                                <button
+                                    class="px-3 py-1.5 rounded-lg bg-surface-container-low text-outline font-label-md text-label-md flex items-center gap-1 opacity-50 cursor-not-allowed"
+                                    disabled="" type="button">
+                                    <span class="material-symbols-outlined text-[18px]">chevron_left</span>
+                                    <span>Trước</span>
+                                </button>
+                                <button
+                                    class="w-9 h-9 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold flex items-center justify-center shadow-sm"
+                                    type="button">1</button>
+                                <button
+                                    class="w-9 h-9 rounded-lg hover:bg-surface-container text-on-surface font-label-md text-label-md flex items-center justify-center transition-colors"
+                                    type="button">2</button>
+                                <button
+                                    class="w-9 h-9 rounded-lg hover:bg-surface-container text-on-surface font-label-md text-label-md flex items-center justify-center transition-colors"
+                                    type="button">3</button>
+                                <button
+                                    class="w-9 h-9 rounded-lg hover:bg-surface-container text-on-surface font-label-md text-label-md flex items-center justify-center transition-colors"
+                                    type="button">4</button>
+                                <button
+                                    class="w-9 h-9 rounded-lg hover:bg-surface-container text-on-surface font-label-md text-label-md flex items-center justify-center transition-colors"
+                                    type="button">5</button>
+                                <button
+                                    class="px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center gap-1 transition-colors"
+                                    type="button">
+                                    <span>Sau</span>
+                                    <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+                                </button>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class="lg:col-span-4 flex flex-col gap-space-md">
+                        <aside class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+                            <div class="flex items-center justify-between pb-space-sm mb-space-sm">
+                                <div class="flex items-center gap-1.5 text-primary font-title-md text-title-md">
+                                    <span class="material-symbols-outlined text-[20px]">psychology</span>
+                                    <span>Knowledge Panel • UNETI AI</span>
+                                </div>
+                                <span
+                                    class="px-2 py-0.5 rounded-full bg-primary-fixed text-primary font-code-sm text-[10px] font-semibold tracking-wider uppercase">WIKI
+                                    GRAPH</span>
+                            </div>
+                            <div
+                                class="relative rounded-lg overflow-hidden mb-space-md shadow-inner bg-surface-container">
+                                <img class="w-full h-36 object-cover"
+                                    data-alt="Technical architectural diagram of the Java Spring Boot ecosystem showing Controller, Service, Repository, Database layers on clean academic white background with blue accents"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuApl9NR0IEibwgRFShx3J205IZkUlcRnOI1A_GIU4N2RBC0dM4DwHdEnKl35rMBI5NPqNUPOWZDbFPEkjAIm-Z0wQgGTkzx8U6uvI_4mu0BG4WfDqQV3SX-6UCwe2A7ImVw5j8x-ySRdUKd9bdqu6iAPbtverJgphz2MBSblr8dASB_LP9sTDJ5e6mpMgdlxzCbs7iLap7ZKKlFFvevKcb8RXaW2pQFSXOhfwydV7steEAGDcps2bD-fg" />
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-transparent to-transparent flex items-end p-space-sm">
+                                    <span class="text-on-primary font-title-md text-title-md font-semibold">Java Spring
+                                        Framework</span>
+                                </div>
+                            </div>
+                            <p class="font-body-md text-body-md text-on-surface-variant mb-space-md leading-relaxed">
+                                Spring Framework là một nền tảng mã nguồn mở phổ biến cho việc phát triển ứng dụng Java
+                                quy mô doanh nghiệp. Với dự án con <strong>Spring Boot</strong>, hệ sinh thái cung cấp
+                                giải pháp đóng gói ứng dụng độc lập (standalone) và giảm thiểu các cấu hình boilerplate
+                                thông qua cơ chế tự động cấu hình (Auto-configuration).
+                            </p>
+                            <div
+                                class="flex flex-col gap-space-sm py-space-xs mb-space-md bg-surface-container-low rounded-lg p-space-md">
+                                <div class="flex items-start justify-between gap-space-xs">
+                                    <span class="font-label-sm text-label-sm text-outline">Mã học phần:</span>
+                                    <span class="font-code-sm text-code-sm text-primary font-semibold">IT6015 (3 Tín
+                                        chỉ)</span>
+                                </div>
+                                <div class="flex items-start justify-between gap-space-xs">
+                                    <span class="font-label-sm text-label-sm text-outline">Khoa quản lý:</span>
+                                    <span
+                                        class="font-label-sm text-label-sm text-on-surface text-right font-medium">Khoa
+                                        Công nghệ thông tin</span>
+                                </div>
+                                <div class="flex items-start justify-between gap-space-xs">
+                                    <span class="font-label-sm text-label-sm text-outline">Giảng viên phụ trách:</span>
+                                    <span class="font-label-sm text-label-sm text-on-surface text-right font-medium">TS.
+                                        Vũ Minh Tuấn &amp; ThS. Đỗ Lan Anh</span>
+                                </div>
+                                <div class="flex items-start justify-between gap-space-xs">
+                                    <span class="font-label-sm text-label-sm text-outline">Giáo trình chính quy:</span>
+                                    <span
+                                        class="font-label-sm text-label-sm text-primary text-right font-medium hover:underline cursor-pointer">Lập
+                                        trình Web Java nâng cao (NXB Giáo Dục, 2024)</span>
+                                </div>
+                                <div class="flex items-start justify-between gap-space-xs">
+                                    <span class="font-label-sm text-label-sm text-outline">Điều kiện tiên quyết:</span>
+                                    <span class="font-label-sm text-label-sm text-on-surface text-right">Lập trình hướng
+                                        đối tượng (OOP Java)</span>
+                                </div>
+                            </div>
+                            <div class="mb-space-md">
+                                <span
+                                    class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold block mb-2">Chủ
+                                    đề liên quan</span>
+                                <div class="flex flex-wrap gap-1.5">
+                                    <a class="px-2 py-1 bg-surface-container rounded-md font-label-sm text-label-sm text-primary hover:bg-primary hover:text-on-primary transition-colors"
+                                        href="#">Spring Security</a>
+                                    <a class="px-2 py-1 bg-surface-container rounded-md font-label-sm text-label-sm text-primary hover:bg-primary hover:text-on-primary transition-colors"
+                                        href="#">Hibernate JPA</a>
+                                    <a class="px-2 py-1 bg-surface-container rounded-md font-label-sm text-label-sm text-primary hover:bg-primary hover:text-on-primary transition-colors"
+                                        href="#">RESTful API</a>
+                                    <a class="px-2 py-1 bg-surface-container rounded-md font-label-sm text-label-sm text-primary hover:bg-primary hover:text-on-primary transition-colors"
+                                        href="#">Maven / Gradle</a>
+                                    <a class="px-2 py-1 bg-surface-container rounded-md font-label-sm text-label-sm text-primary hover:bg-primary hover:text-on-primary transition-colors"
+                                        href="#">Microservices</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-space-sm pt-space-xs">
+                                <button
+                                    class="w-full py-2 bg-surface-container hover:bg-surface-container-high text-primary rounded-lg font-label-md text-label-md flex items-center justify-center gap-1.5 transition-colors"
+                                    type="button">
+                                    <span class="material-symbols-outlined text-[18px]">auto_stories</span>
+                                    <span>Xem trang Wiki chi tiết</span>
+                                </button>
+                            </div>
+                        </aside>
+                        <div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+                            <div
+                                class="flex items-center gap-2 text-on-surface font-title-md text-title-md mb-space-sm">
+                                <span class="material-symbols-outlined text-secondary text-[20px]">trending_up</span>
+                                <span>Xu hướng tìm kiếm tại UNETI</span>
+                            </div>
+                            <ul class="flex flex-col gap-2 font-body-sm text-body-sm">
+                                <li>
+                                    <a class="flex items-center justify-between text-on-surface-variant hover:text-primary transition-colors py-1"
+                                        href="#">
+                                        <span>1. Đề thi trắc nghiệm Kiến trúc máy tính K16</span>
+                                        <span class="font-code-sm text-code-sm text-outline">+142</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="flex items-center justify-between text-on-surface-variant hover:text-primary transition-colors py-1"
+                                        href="#">
+                                        <span>2. Slide bài giảng Kinh tế vi mô thầy Hoàng</span>
+                                        <span class="font-code-sm text-code-sm text-outline">+98</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="flex items-center justify-between text-on-surface-variant hover:text-primary transition-colors py-1"
+                                        href="#">
+                                        <span>3. Đồ án Thiết kế vi mạch số VHDL</span>
+                                        <span class="font-code-sm text-code-sm text-outline">+85</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="flex items-center justify-between text-on-surface-variant hover:text-primary transition-colors py-1"
+                                        href="#">
+                                        <span>4. Mẫu báo cáo thực tập cơ sở ngành CNTT</span>
+                                        <span class="font-code-sm text-code-sm text-outline">+71</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="bg-surface-container rounded-xl p-space-md flex flex-col gap-2">
+                            <div class="flex items-center gap-2 text-primary font-title-md text-title-md">
+                                <span class="material-symbols-outlined text-[20px]">help_outline</span>
+                                <span>Không tìm thấy câu trả lời?</span>
+                            </div>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                                Đăng câu hỏi mới để nhận giải đáp từ đội ngũ trợ giảng (TA) và các giảng viên Khoa CNTT
+                                trong vòng 2 giờ.
+                            </p>
+                            <button
+                                class="mt-1 w-full py-2 bg-primary text-on-primary rounded-lg font-label-md text-label-md flex items-center justify-center gap-1.5 shadow-sm hover:opacity-95 transition-opacity"
+                                type="button">
+                                <span class="material-symbols-outlined text-[18px]">add_circle</span>
+                                <span>Đặt câu hỏi ngay</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="w-full bg-surface-container-lowest py-space-lg mt-auto shadow-[0_-1px_8px_rgba(0,0,0,0.02)]">
+            <div class="w-full px-margin-desktop flex flex-col md:flex-row items-center justify-between gap-space-md">
+                <div class="flex items-center gap-space-md"><span class="font-label-sm text-label-sm text-outline">©
+                        2024 Trường Đại học Kinh tế - Kỹ thuật Công nghiệp (UNETI)</span><span
+                        class="text-outline-variant">•</span><span class="font-label-sm text-label-sm text-outline">Hệ
+                        thống tri thức số USAIC</span></div>
+                <div class="flex items-center gap-space-lg"><a
+                        class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors"
+                        href="#">Quy chế học thuật</a><a
+                        class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors"
+                        href="#">Hướng dẫn trích dẫn</a><a
+                        class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors"
+                        href="#">Chính sách liêm chính</a><a
+                        class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors"
+                        href="#">Hỗ trợ kỹ thuật</a></div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
